@@ -1,0 +1,136 @@
+/* Reset some basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General body styling */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f3f4f6;
+  margin: 0;
+}
+
+/* Container for each page */
+.container {
+  max-width: 500px;
+  width: 100%;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  display: none; /* Initially hide all containers */
+}
+
+/* Show the first page by default */
+.container:not(.hidden) {
+  display: block;
+}
+
+/* Header with logo styling */
+header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width:  420px;
+  height: auto;
+}
+
+/* Footer styling */
+footer {
+  margin-top: 50px;
+  text-align: center;
+}
+
+footer img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
+/* Headings */
+h2 {
+  color: #1e3a8a;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Form labels and inputs */
+form label {
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form input:focus {
+  border-color: #1e3a8a;
+  outline: none;
+}
+
+/* Required field styling */
+.required {
+  color: red;
+  font-weight: bold;
+}
+
+/* Error message styling */
+.error-message {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px 0;
+}
+
+/* Button styling */
+button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #1e3a8a;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #374151;
+}
+
+/* Specific spacing for Page 2 and Page 3 buttons */
+#addressForm button,
+#paymentForm button {
+  margin-top: 20px;
+}
+
+/* List styling */
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+ul li {
+  margin-bottom: 8px;
+}
