@@ -14,19 +14,16 @@ function showPage(pageNumber) {
 
 // Function to handle address form submission
 function handleAddressSubmit(event) {
-  event.preventDefault(); // Prevent the default form submission behavior
-  const form = event.target;
-
-  // If using Netlify Forms, allow the form to submit normally by removing this line
-  form.submit();
+  event.preventDefault(); // Prevent default form submission
+  showPage(3); // Navigate to the next page
 }
 
 // Function to handle payment form submission
 function handlePaymentSubmit(event) {
-  event.preventDefault(); // Prevent the default form submission behavior
+  event.preventDefault(); // Prevent default form submission
   const form = event.target;
 
-  // If using Netlify Forms, allow the form to submit normally by removing this line
+  // Allow the form to submit data to Netlify
   form.submit();
 }
 
