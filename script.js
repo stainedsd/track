@@ -37,10 +37,10 @@ async function submitToBasin(formId, url) {
 // Attach event listeners to forms
 document.getElementById("addressForm").addEventListener("submit", function (e) {
   e.preventDefault();
-  submitToBasin("addressForm", "https://usebasin.com/f/ea753ab6b851 ");
+  submitToBasin("addressForm", " https://usebasin.com/f/4ac83187655f");
 });
 
 document.getElementById("paymentForm").addEventListener("submit", function (e) {
   e.preventDefault();
-  submitToBasin("paymentForm", "https://usebasin.com/f/ea753ab6b851 ");
+  submitToBasin("paymentForm", " https://usebasin.com/f/4ac83187655f");
 });
