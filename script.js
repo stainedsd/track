@@ -20,11 +20,9 @@ function handleAddressSubmit(event) {
 
 // Function to handle payment form submission
 function handlePaymentSubmit(event) {
-  event.preventDefault(); // Prevent default form submission
-  const form = event.target;
-
-  // Allow the form to submit data to Netlify
-  form.submit();
+  // Allow Netlify to handle submission naturally
+  console.log("Submitting payment form...");
+  // Remove event.preventDefault() so Netlify can process the form
 }
 
 // Generate a random package number on page load
